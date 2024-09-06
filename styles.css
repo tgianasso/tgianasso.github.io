@@ -5,14 +5,20 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+    font-family: 'Arial', sans-serif;
+    background-color: #2E3440; /* Nordic dark background */
+    color: #D8DEE9; /* Light text color for contrast */
+    line-height: 1.6;
+    transition: background-color 0.5s ease-in-out; /* Smooth transitions on background */
 }
 
 header {
-    background-color: #333;
-    padding: 10px 0;
+    background-color: #3B4252; /* Darker gray for header */
+    padding: 20px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for modern effect */
+    position: sticky; /* Keep header sticky on scroll */
+    top: 0;
+    z-index: 1000;
 }
 
 nav ul {
@@ -26,22 +32,52 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
+    color: #D8DEE9; /* Light text on dark background */
     text-decoration: none;
     font-weight: bold;
+    padding: 10px;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Smooth transitions */
+}
+
+nav ul li a:hover {
+    color: #81A1C1; /* Change to light blue on hover */
+    transform: scale(1.1); /* Enlarge slightly on hover */
 }
 
 footer {
     text-align: center;
     padding: 20px;
-    background-color: #333;
-    color: white;
+    background-color: #3B4252; /* Match footer with header color */
+    color: #D8DEE9;
     position: fixed;
     width: 100%;
     bottom: 0;
 }
 
 main {
-    padding: 20px;
-    margin-top: 20px;
+    padding: 40px;
+    margin-top: 80px; /* More space between header and content */
+    animation: fadeIn 1s ease-in-out; /* Fade-in animation on page load */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Subtle background pattern for more texture */
+body::before {
+    content: "";
+    background: url('https://www.transparenttextures.com/patterns/asfalt-light.png');
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.1; /* Very light opacity for subtle texture */
+    z-index: -1;
 }
